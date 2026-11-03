@@ -35,3 +35,33 @@ public:
         return true;
     }
 };
+
+
+/**
+Node based
+ */
+class Solution {
+public:
+    void inorder(TreeNode* root, vector<TreeNode*>& nums) {
+        if (root == nullptr) {
+            return;
+        }
+        inorder(root->left, nums);
+        nums.push_back(root);
+        inorder(root->right, nums);
+    }
+
+    bool isValidBST(TreeNode* root) {
+        vector<TreeNode*> nums;
+
+        inorder(root, nums);
+
+        for (int i = 1; i < nums.size(); i++) {
+            if (nums[i]->val <= nums[i - 1]->val) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+};
