@@ -27,14 +27,16 @@ public:
 /*
 Kadane's Algorithm ek Dynamic Programming approach hai.
 
-Hum currSum mein current subarray ka sum maintain karte hain.
+currSum me phele arr[0] tak k indexes ka sum aya hum ne max se comapre kr k max rkh liya k ab tak ka maximum kitna chal rhaa ha 
+aise hi jaise jaise indexes age brhen ge waise waise currSum me arr k us specific idnex tak ak sum ho ga
+
+suppsoe arry ah 4 elements ki 
+currSum me phele arr[0] aya max se commpare howa or obvious wohi max Sum ban gaya 
+ab arr[1] tak ka currSum me aya or max me ab tak ak max pra ho ga aise end tak kam done 
 
 Agar currSum negative ho jaye, toh usay 0 kar dete hain,
 kyunke negative sum ko aage carry karna kisi future subarray ke
 sum ko faida nahi dega.
-
-Har element ke baad currSum ko maxSum ke saath compare karte hain
-taake ab tak ka maximum subarray sum save rahe.
 
 Important:
 maxSum ko INT_MIN se initialize karte hain, 0 se nahi,
